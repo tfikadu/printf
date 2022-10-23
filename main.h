@@ -8,7 +8,10 @@
 #define BUFF_SIZE 1024
 
 /* FLAGS */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 #define F_MINUS 1
 #define F_PLUS 2
 #define F_ZERO 4
@@ -16,7 +19,10 @@
 #define F_SPACE 16
 
 /* SIZES */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 #define S_LONG 2
 #define S_SHORT 1
 
@@ -26,22 +32,35 @@
  * @fmt: The format.
  * @fn: The function associated.
  */
+<<<<<<< HEAD
 
 struct fmt
 
+=======
+struct fmt
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 {
 	char fmt;
 	int (*fn)(va_list, char[], int, int, int, int);
 };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 /**
  * typedef struct fmt fmt_t - Struct op
  *
  * @fmt: The format.
  * @fm_t: The function associated.
  */
+<<<<<<< HEAD
 
 typedef struct fmt fmt_t;
+=======
+typedef struct fmt fmt_t;
+
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
 va_list list, char buffer[], int flags, int width, int precision, int size);
@@ -69,6 +88,10 @@ int print_hexadecimal(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_hexa_upper(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 int print_hexa(va_list types, char map_to[],
 char buffer[], int flags, char flag_ch, int width, int precision, int size);
 
@@ -103,6 +126,10 @@ int write_num(int ind, char bff[], int flags, int width, int precision,
 	int length, char padd, char extra_c);
 int write_pointer(char buffer[], int ind, int length,
 	int width, int flags, char padd, char extra_c, int padd_start);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 int write_unsgnd(int is_negative, int ind,
 char buffer[],
 	int flags, int width, int precision, int size);

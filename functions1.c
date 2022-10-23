@@ -11,6 +11,7 @@
  * @size: Size specifier
  * Return: Number of chars printed.
  */
+<<<<<<< HEAD
 
 	int print_unsigned(va_list types, char buffer[],
 
@@ -19,28 +20,45 @@
 {
 	int i = BUFF_SIZE - 2;
 
+=======
+int print_unsigned(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
+{
+	int i = BUFF_SIZE - 2;
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 	unsigned long int num = va_arg(types, unsigned long int);
 
 	num = convert_size_unsgnd(num, size);
 
 	if (num == 0)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 		buffer[i--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
+<<<<<<< HEAD
 
 	{
 		buffer[i--] = (num % 10) + '0';
 
+=======
+	{
+		buffer[i--] = (num % 10) + '0';
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 		num /= 10;
 	}
 
 	i++;
 
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 }
 
 /************* PRINT UNSIGNED NUMBER IN OCTAL  ****************/
@@ -54,6 +72,7 @@
  * @size: Size specifier
  * Return: Number of chars printed
  */
+<<<<<<< HEAD
 	int print_octal(va_list types, char buffer[],
 
 	int flags, int width, int precision, int size)
@@ -63,6 +82,14 @@
 
 	unsigned long int num = va_arg(types, unsigned long int);
 
+=======
+int print_octal(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
+{
+
+	int i = BUFF_SIZE - 2;
+	unsigned long int num = va_arg(types, unsigned long int);
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 	unsigned long int init_num = num;
 
 	UNUSED(width);
@@ -70,21 +97,32 @@
 	num = convert_size_unsgnd(num, size);
 
 	if (num == 0)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 		buffer[i--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
+<<<<<<< HEAD
 
 	{
 		buffer[i--] = (num % 8) + '0';
 
+=======
+	{
+		buffer[i--] = (num % 8) + '0';
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 		num /= 8;
 	}
 
 	if (flags & F_HASH && init_num != 0)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 		buffer[i--] = '0';
 
 	i++;
@@ -103,6 +141,7 @@
  * @size: Size specifier
  * Return: Number of chars printed
  */
+<<<<<<< HEAD
 
 	int print_hexadecimal(va_list types, char buffer[],
 
@@ -111,6 +150,12 @@
 {
 	return (print_hexa(types, "0123456789abcdef", buffer,
 
+=======
+int print_hexadecimal(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
+{
+	return (print_hexa(types, "0123456789abcdef", buffer,
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 		flags, 'x', width, precision, size));
 }
 
@@ -125,6 +170,7 @@
  * @size: Size specifier
  * Return: Number of chars printed
  */
+<<<<<<< HEAD
 
 int print_hexa_upper(va_list types, char buffer[],
 
@@ -133,6 +179,12 @@ int print_hexa_upper(va_list types, char buffer[],
 {
 	return (print_hexa(types, "0123456789ABCDEF", buffer,
 
+=======
+int print_hexa_upper(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
+{
+	return (print_hexa(types, "0123456789ABCDEF", buffer,
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 		flags, 'X', width, precision, size));
 }
 
@@ -150,6 +202,7 @@ int print_hexa_upper(va_list types, char buffer[],
  * @size: Size specification
  * Return: Number of chars printed
  */
+<<<<<<< HEAD
 
 	int print_hexa(va_list types, char map_to[], char buffer[],
 
@@ -160,6 +213,13 @@ int print_hexa_upper(va_list types, char buffer[],
 
 	unsigned long int num = va_arg(types, unsigned long int);
 
+=======
+int print_hexa(va_list types, char map_to[], char buffer[],
+	int flags, char flag_ch, int width, int precision, int size)
+{
+	int i = BUFF_SIZE - 2;
+	unsigned long int num = va_arg(types, unsigned long int);
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 	unsigned long int init_num = num;
 
 	UNUSED(width);
@@ -167,7 +227,10 @@ int print_hexa_upper(va_list types, char buffer[],
 	num = convert_size_unsgnd(num, size);
 
 	if (num == 0)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 		buffer[i--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
@@ -179,10 +242,15 @@ int print_hexa_upper(va_list types, char buffer[],
 	}
 
 	if (flags & F_HASH && init_num != 0)
+<<<<<<< HEAD
 
 	{
 		buffer[i--] = flag_ch;
 
+=======
+	{
+		buffer[i--] = flag_ch;
+>>>>>>> 60ee7872584952a37d7e60e05ff66620a6343a83
 		buffer[i--] = '0';
 	}
 
